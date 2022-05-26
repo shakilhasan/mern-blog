@@ -1,0 +1,52 @@
+[
+    {
+        "firstName": "Super",
+        "lastName": "Admin",
+        "displayName": "Super Admin",
+        "username": "superadmin@blog.com",
+        "address": "Dhaka, Bangladesh",
+        "phoneNumber": "01000000001",
+        "email": "superadmin@blog.com",
+        "roleId": "",
+        "roleAlias": "Super Admin",
+        "password": "blog1234",
+        "isVerified": true,
+        "status": "active",
+        "company": "blog",
+        "photoURL": "https://minimal-assets-api.vercel.app/assets/images/avatars/avatar_2.jpg"
+    },
+    {
+        "firstName": "Admin",
+        "lastName": "Admin",
+        "username": "admin@blog.com",
+        "displayName": "admin",
+        "address": "Wakanda",
+        "phoneNumber": "01000000002",
+        "email": "admin@blog.com",
+        "roleId": "",
+        "roleAlias": "Admin",
+        "password": "blog1234",
+        "isVerified": true,
+        "status": "active",
+        "company": "blog",
+        "photoURL": "https://minimal-assets-api.vercel.app/assets/images/avatars/avatar_2.jpg"
+
+    },
+    {
+        "firstName": "User",
+        "lastName": "User",
+        "username": "user@blog.com",
+        "displayName": "user",
+        "address": "Wakanda",
+        "phoneNumber": "01000000003",
+        "email": "user@blog.com",
+        "roleId": "",
+        "roleAlias": "User",
+        "password": "blog1234",
+        "isVerified": true,
+        "status": "active",
+        "company": "blog",
+        "photoURL": "https://minimal-assets-api.vercel.app/assets/images/avatars/avatar_2.jpg"
+
+    }
+]
