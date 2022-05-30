@@ -67,12 +67,11 @@ const count = async (query, modelName) => {
   const data = await mongoose.models[modelName].find(query).count();
   return data;
 };
-const countDocuments = async ( modelName) => {
+const countDocuments = async (modelName) =>
+  mongoose.models[modelName].countDocuments();
 
-  return mongoose.models[modelName].countDocuments();
-};
-
-const getAll = async ( modelName) => {  // todo - remove later
+const getAll = async (modelName) => {
+  // todo - remove later
   const data = await mongoose.models[modelName].find();
   return data;
 };
@@ -83,20 +82,20 @@ const search = async (payload, query, modelName) => {
   const skip = (parseInt(payload?.current, 10) - 1) * take;
 
   return mongoose.models[modelName]
-      .find(query)
-      .sort(sort)
-      .skip(skip)
-      .limit(take);
+    .find(query)
+    .sort(sort)
+    .skip(skip)
+    .limit(take);
 };
 
-const getDropdownData = async (query, project, modelName) => {
-  return await mongoose.models[modelName]
-      .find(query)
-      .select(project)
-      .sort(project)
-      .lean()
-      .exec();
-};
+const getDropdownData = async (query, project, modelName) =>
+  // eslint-disable-next-line no-return-await
+  await mongoose.models[modelName]
+    .find(query)
+    .select(project)
+    .sort(project)
+    .lean()
+    .exec();
 
 module.exports = {
   getAll,

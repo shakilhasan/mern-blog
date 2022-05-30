@@ -7,6 +7,6 @@ const { router: blogMockRoutes } = require("./blog-controller-mock");
 
 router.use("/users", userMockRoutes);
 router.use("/products", productMockRoutes);
-router.use("/blog", blogMockRoutes);
+router.use("/blogs", blogMockRoutes);
 
 module.exports = router;
