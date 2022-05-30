@@ -16,6 +16,7 @@ const { getAll } = require("../../core/repository");
 const router = express.Router();
 
 const searchHandler = async (req, res, next) => {
+  console.log("blog searchHandler body---------- ",req.body);
   req.searchQuery = getQuery(req.body);
   return baseSearchHandler(req, res, next);
 };
