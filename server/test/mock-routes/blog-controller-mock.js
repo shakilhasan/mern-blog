@@ -46,7 +46,7 @@ const getFakeBlog = async () => ({
       postedAt: faker.date.past(),
       users: [
         {
-          id: faker.random.hexaDecimal(10),
+          id: "43f34f34r3fceewf",
           name: faker.name.findName(),
           avatarUrl: faker.image.avatar(),
         },
@@ -54,7 +54,7 @@ const getFakeBlog = async () => ({
       replyComment: [
         {
           id: faker.random.hexaDecimal(10),
-          userId: faker.datatype.number({ max: 20000 }),
+          userId: "43f34f34r3fceewf",
           message: faker.lorem.text(),
           postedAt: faker.date.past(),
         },
