@@ -27,7 +27,7 @@ export const UPDATE_PRODUCT = "/products/update"
 // BLOGS
 export const GET_BLOG = "/blogs/detail"
 export const SEARCH_BLOGS = "/blogs/search"
-export const ADD_BLOG = "/blogs/create"
+export const ADD_BLOG_COMMENT = "/blogs/comment"
 export const UPDATE_BLOG = "/blogs/update"
 
 // RESOURCES

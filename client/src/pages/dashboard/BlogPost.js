@@ -123,7 +123,7 @@ export default function BlogPost() {
                 <Pagination count={8} color="primary" />
               </Box>
 
-              <BlogPostCommentForm />
+              <BlogPostCommentForm post={post} />
             </Box>
           </Card>
         )}

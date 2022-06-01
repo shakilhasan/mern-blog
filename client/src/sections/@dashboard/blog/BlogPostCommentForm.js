@@ -8,6 +8,9 @@ import { Typography, Stack } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 // components
 import { FormProvider, RHFTextField } from '../../../components/hook-form';
+import {addComment} from "../../../helpers/backend_helper";
+import PropTypes from "prop-types";
+import BlogPostCommentList from "./BlogPostCommentList";
 
 // ----------------------------------------------------------------------
 
@@ -18,8 +21,10 @@ const RootStyles = styled('div')(({ theme }) => ({
 }));
 
 // ----------------------------------------------------------------------
-
-export default function BlogPostCommentForm() {
+BlogPostCommentForm.propTypes = {
+  post: PropTypes.object.isRequired,
+};
+export default function BlogPostCommentForm({ post }) {
   const CommentSchema = Yup.object().shape({
     comment: Yup.string().required('Comment is required'),
     name: Yup.string().required('Name is required'),
@@ -39,13 +44,23 @@ export default function BlogPostCommentForm() {
 
   const {
     reset,
+    watch,
+    control,
+    setValue,
+    getValues,
     handleSubmit,
-    formState: { isSubmitting },
+    formState: { isSubmitting, isValid },
+
   } = methods;
 
   const onSubmit = async () => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 500));
+      const comment = getValues();
+      comment.postId = post._id;
+      comment.avatarUrl = "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/62.jpg"
+      await addComment(comment);
+      console.log("comments--",comment);
       reset();
     } catch (error) {
       console.error(error);

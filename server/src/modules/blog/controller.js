@@ -32,6 +32,7 @@ router.post(
   saveHandler
 );
 router.put("/update", handleValidation(validate), updateHandler);
+router.put("/comment", handleValidation(validate), updateHandler);
 router.post("/search", searchHandler);
 router.post("/count", countHandler);
 router.delete("/delete", deleteHandler);
