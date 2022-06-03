@@ -1,6 +1,5 @@
 import { del, get, post, put } from "./api_helper";
 import * as url from "./url_helper";
-import {ADD_BLOG_COMMENT} from "./url_helper";
 
 //  .............................. AUTH ....................................
 export const userLogin = user => post(url.USER_LOGIN, user, { params: { ...user } });
@@ -25,8 +24,6 @@ export const searchBlogs = blog => post(url.SEARCH_BLOGS, blog)
 export const getBlogById = id => get(url.GET_BLOG, { params: { id } })
 export const addBlog = blog => post(url.ADD_BLOG, blog)
 export const updateBlog = blog =>  put(url.UPDATE_BLOG, blog)
-
-export const addComment = blog => post(url.ADD_BLOG_COMMENT, blog);
 
 //  .............................. RESOURCES ....................................
 // add user
