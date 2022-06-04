@@ -11,11 +11,11 @@ const {
 } = require("../../core/controller");
 const { validate } = require("./request");
 const { handleValidation } = require("../../common/middlewares");
-const { getAll } = require("../../core/repository");
 
 const router = express.Router();
 
 const searchHandler = async (req, res, next) => {
+  console.log("blog searchHandler body---------- ", req.body);
   req.searchQuery = getQuery(req.body);
   return baseSearchHandler(req, res, next);
 };
@@ -31,7 +31,12 @@ router.post(
   // handleValidation(validate),
   saveHandler
 );
-router.put("/update", handleValidation(validate), updateHandler);
+router.put(
+  "/update",
+  // handleValidation(validate),
+  updateHandler
+);
+
 router.post("/search", searchHandler);
 router.post("/count", countHandler);
 router.delete("/delete", deleteHandler);

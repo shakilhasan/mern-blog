@@ -12,9 +12,9 @@ const processRequest = async (req, res, next) => {
 
 const init = async (app) => {
   app.use(
-    "/api/blog",
+    "/api/blogs",
     authenticateRequest,
-    authorizeRequest,
+    // authorizeRequest,
     processRequest,
     routes
   );
